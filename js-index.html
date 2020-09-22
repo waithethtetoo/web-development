@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drop Down Menu</title>
+	<link rel="stylesheet" href="style.css">
+	<!-- <link rel="stylesheet" href="D:\project files\Web Projects\bootstrap-4.5.2-dist\css\bootstrap.min.css"> -->
+</head>
+<body>	
+	<ul class="nav">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Contact</a></li>
+		<li onclick="toggleSub()">
+		<a href="#">Services &raquo;</a>
+		<ul class="sub" id="sub">
+			<li><a href="#">Social Media</a></li>
+			<li><a href="#">Web Development</a></li>
+			<li><a href="#">Mobile Development</a></li>
+			<li><a href="#">SEO</a></li>
+		</ul>
+		</li>
+		<li><a href="#">Products</a></li>
+	</ul>
+	
+	
+	<br>
+	<h1>This is test Website!</h1>
+	<p>
+		This is first paragraph.This is first paragraph.This is first paragraph.This is first paragraph.This is first paragraph.
+		This is first paragraph.This is first paragraph.This is first paragraph.
+		This is first paragraph.This is first paragraph.This is first paragraph.
+		This is first paragraph.This is first paragraph.
+	</p>
+	<p>
+		This is second paragraph.This is second paragraph.This is second paragraph.This is second paragraph.
+		This is second paragraph.This is second paragraph.
+		This is second paragraph.This is second paragraph.This is second paragraph.This is second paragraph.
+		This is second paragraph.This is second paragraph.
+	</p>
+	<button onClick="showDialog()">Contact Me?</button>
+
+	<!--Dialog Box-->
+	<div id="overlay" onClick="hideDialog()"></div>
+	<div id="dialog">
+		<h2>Contact Me? <span onClick="hideDialog()">&times;</span></h2>
+
+		<form>
+			<input type="text" placeholder="Email">
+			<textarea placeholder="Message"></textarea>
+			<input type="submit" value="Send">
+		</form>
+	</div>
+
+	<script>
+		function toggleSub() {
+			var obj = document.getElementById("sub");
+			if (obj.style.display == "block") {
+				obj.style.display = "none";
+			} else {
+				obj.style.display = "block";
+			}
+		}
+
+		function showDialog() {
+			document.getElementById("overlay").style.display = "block";
+			document.getElementById("dialog").style.display = "block";
+		}
+
+		function hideDialog() {
+			document.getElementById("overlay").style.display = "none";
+			document.getElementById("dialog").style.display = "none";
+		}
+	</script>
+</body>
+</html>
