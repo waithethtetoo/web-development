@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html> <html>
 <head>
 	<title>Drop Down Menu</title>
 	<link rel="stylesheet" href="style.css">
@@ -44,14 +43,30 @@
 	<div id="dialog">
 		<h2>Contact Me? <span onClick="hideDialog()">&times;</span></h2>
 
-		<form>
-			<input type="text" placeholder="Email">
-			<textarea placeholder="Message"></textarea>
+		<form id="comment" action="">
+			<input id="cemail" name="email" type="text" placeholder="Email">
+			<textarea id="ccomment" name="comment" placeholder="Message"></textarea>
 			<input type="submit" value="Send">
 		</form>
 	</div>
 
+	<script src="D:\project files\Web Projects\jquery.js"></script>
+	<script src="D:\project files\Web Projects\jquery-validation-1.19.2\dist\jquery.validate.js"></script>
 	<script>
+
+		$(document).ready(function() {
+			$("#comment").validate({
+				rules: {
+					email: {
+						"required" : true,
+						"email" :true
+					},
+					comment: {
+						"required" : true
+					}
+				}
+			});
+		});
 		function toggleSub() {
 			var obj = document.getElementById("sub");
 			if (obj.style.display == "block") {
