@@ -3,6 +3,7 @@
 <head>
 	<title>To Do List</title>
 
+	<link rel="stylesheet" href="D:\project files\Web Projects\jquery-ui-1.12.1\jquery-ui.css">
 	<style>
 		#wrap {
 			width: 360px;
@@ -104,9 +105,16 @@
 		</div>
 	</div>
 
+	<input type="text" id="date">
+
+
 	<script src="D:\project files\Web Projects\jquery.js"></script>
+	<script src="D:\project files\Web Projects\jquery-ui-1.12.1\jquery-ui.js"></script>
 	<script>
 		$(document).ready(function() {
+			
+			$("#date").datepicker();
+
 			$("#new-task button").click(function() {
 				var task = $("#new-task input").val();
 				
